@@ -1,0 +1,101 @@
+.panel {
+    height: 100vh;
+    position: sticky;
+
+    .ps-sidebar-root{
+        border-right-width: 0px ;
+
+        .ps-sidebar-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 0;
+    
+            .header-and-button {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+        
+                .logotext { 
+                    display: flex;
+                    justify-content: center;
+        
+                    height: 140px;
+    
+                    h2 {
+                        white-space: nowrap;
+                    }
+        
+                    .collapsed {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+        
+                        border-radius: 50%;
+                        border: 1px solid #e2e2e2;
+                    }
+                }
+            }
+    
+            a {
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+    
+                .btn {
+                    display: flex;
+    
+                    .btn-text {
+                        white-space: nowrap;
+                    }
+    
+                    &.btn-collapsed {
+                        background-color: $color-primary-green;
+                        
+                    }
+                }
+    
+            }
+        }
+    }
+    
+
+    .css-dip3t8 {
+        position: static;
+
+        .closemenu {
+            position: absolute;
+            right: -33px;
+            top: 55px;
+            z-index: 9999;
+
+            background-color: $color-primary-bluedark;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            color: #ffffff;
+            line-height: 20px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    }
+
+
+        .ps-sidebar-container {
+            height: 100vh;
+            background: $color-primary-bluedark;
+            color: $color-font-secondary-gray;
+            font-family: $font-family-primary;
+
+            a {
+                &:hover {
+                    background: $color-primary-bluedark;
+                }
+            }
+        }
+
+        .active {
+            color: $color-primary-green;
+        }
+}
