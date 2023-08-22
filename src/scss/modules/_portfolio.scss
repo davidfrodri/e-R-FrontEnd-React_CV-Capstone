@@ -1,0 +1,108 @@
+.portfolio {
+    font-family: $font-family-primary;
+
+    .title {
+        color: $color-primary-green;
+        margin-bottom: 30px;
+    }
+
+    .tabs {
+        font-size: 16px;
+        margin-bottom: 20px;
+      
+        li {
+          display:inline-block;
+          padding: 0 0 0 10px;
+          margin: 0 5px 0 0;
+          position: relative;
+          text-transform: capitalize;
+      
+          span {
+            cursor: pointer;
+          }
+      
+          &.active {
+            span {
+              color: #26C17E;
+            }
+          }
+      
+          &:first-child {
+            padding: 0;
+            &:after {
+              display: none;
+            }
+          }
+      
+          &:after {
+            content: "/";
+            position: absolute;
+            top:0;
+            left:0;
+          }
+        }
+      }
+      
+    .filter-container {
+        overflow: hidden;
+        position: relative;
+        min-height: 200px;
+        display: flex;
+        margin-top: 10px;
+      
+        li {
+          width: 308px;
+          margin:0 20px 20px 0;
+          position: relative;
+          height: 194px;
+          overflow: hidden;
+
+          img {
+            width: 308px;
+            height: 190px;
+            object-fit: cover;
+          }
+      
+          .portfolio-info {
+            height: 190px;
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            padding: 20px 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            top: 100%;
+            transition: all 0.5s ease 0s;
+
+            h2 {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: $color-primary-green;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: $color-primary-green;
+                font-size: 14px;
+            }
+          }
+      
+          &:hover {
+            .portfolio-info {
+              top: 0;
+            }
+          }
+        }
+      
+        span{
+          display: block;
+        }
+    }
+}
+
+  

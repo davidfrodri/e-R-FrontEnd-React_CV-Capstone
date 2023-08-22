@@ -1,0 +1,49 @@
+.expertise {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-family: $font-family-primary;
+
+	h2 {
+		color: $color-primary-green;
+	}
+
+	.expertise__list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.expertise__list__item {
+			display: flex;
+
+			h3 {
+				font-weight: 700;
+				font-size: 16px;
+			}
+
+			.expertise__list__date {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				min-width: 150px;
+
+				span {
+					font-size: 16px;
+				}
+			}
+
+			.expertise__list__info {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				p {
+					font-size: 14px;
+					line-height: 21px;
+				}
+			}
+		}
+	}
+}

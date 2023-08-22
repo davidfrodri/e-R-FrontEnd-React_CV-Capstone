@@ -1,0 +1,51 @@
+.feedback {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-family: $font-family-primary;
+
+	&__title {
+		color: $color-primary-green;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+
+		.feedback__item {
+			list-style: none;
+
+			blockquote {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				.feedback__reporter {
+					display: flex;
+					gap: 20px;
+
+					img {
+						width: 50px;
+						border-radius: 50%;
+					}
+
+					cite {
+						display: flex;
+						gap: 5px;
+						align-items: center;
+
+						font-size: 12px;
+						font-style: normal;
+
+						a {
+							text-decoration: none;
+							color: $color-primary-green;
+						}
+					}
+				}
+			}
+		}
+	}
+}
