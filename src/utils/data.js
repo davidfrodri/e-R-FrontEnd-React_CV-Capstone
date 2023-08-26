@@ -61,6 +61,13 @@ export const timeLineData = [
   }
 ];
 
+export const defaultSkillsData  = [
+  {name: 'React', range: 50},
+  {name: 'CSS', range: 55},
+  {name: 'HTML', range: 60},
+  {name: 'JavaScript', range: 40}
+]
+
 export const experienceData = {
   data: [
     {

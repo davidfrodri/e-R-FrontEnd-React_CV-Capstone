@@ -7,6 +7,7 @@ import useScrollToTop from '../../hooks/useScrollToTop'
 import Info from '../../components/Info/Info'
 import Box from '../../components/Box/Box'
 import Expertise from '../../components/Expertise/Expertise'
+import Skills from '../../components/Skills/Skills'
 import Address from '../../components/Address/Address'
 import Feedback from '../../components/Feedback/Feedback'
 import Portfolio from '../../components/Portfolio/Portfolio'
@@ -23,6 +24,7 @@ const Main = (): JSX.Element => {
         <Box text={aboutMeTextData} id='about-me' />
         <TimeLine />
         <Expertise data={experienceData.data} />
+        <Skills />
         <Portfolio />
         <Address />
         <Feedback data={feedbackData.data} />

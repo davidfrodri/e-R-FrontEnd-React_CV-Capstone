@@ -1,7 +1,7 @@
-import { type JobDataArray } from '../../services/services'
+import { type JobDataArray } from '../../types'
 
 interface Props {
-	data: JobDataArray
+  data: JobDataArray
 }
 
 const Expertise = ({ data }: Props): JSX.Element => {

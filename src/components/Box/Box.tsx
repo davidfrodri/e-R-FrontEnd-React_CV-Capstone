@@ -1,7 +1,7 @@
-interface Props {
-	title?: string
-	text?: string
-	id?: string
+export interface Props {
+  title?: string
+  text?: string
+  id?: string
 }
 
 const Box = ({ title, text, id }: Props): JSX.Element => {

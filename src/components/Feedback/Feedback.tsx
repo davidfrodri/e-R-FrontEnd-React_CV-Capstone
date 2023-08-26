@@ -1,18 +1,18 @@
 import Info from '../Info/Info'
 
 interface reporter {
-	photoUrl: string
-	name: string
-	citeUrl: string
+  photoUrl: string
+  name: string
+  citeUrl: string
 }
 
 interface feedbackdata {
-	feedback: string
-	reporter: reporter
+  feedback: string
+  reporter: reporter
 }
 
 interface Props {
-	data: feedbackdata[]
+  data: feedbackdata[]
 }
 
 const Feedback = ({ data }: Props): JSX.Element => {

@@ -1,6 +1,6 @@
 interface Props {
   title?: string
-	text: string
+  text: string
 }
 
 const Info = ({ title, text }: Props): JSX.Element => {

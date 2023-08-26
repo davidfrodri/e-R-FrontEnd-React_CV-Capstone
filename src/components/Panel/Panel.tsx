@@ -1,121 +1,129 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faGraduationCap, faPencil, faSuitcase, faPaperPlane, faComment, faBars ,faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faGraduationCap, faPencil, faSuitcase, faPaperPlane, faComment, faBars, faChevronLeft, faGem } from '@fortawesome/free-solid-svg-icons'
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar'
 
-import PhotoBoxHome from '../PhotoBox/PhotoBoxHome';
-import useCurrentSection from '../../hooks/useCurrentSection';
+import PhotoBoxHome from '../PhotoBox/PhotoBoxHome'
+import useCurrentSection from '../../hooks/useCurrentSection'
 import img from '../../assets/images/useravatar.png'
 
-import Button from '../Button/Button';
+import Button from '../Button/Button'
 
 const Panel: React.FC = (): JSX.Element => {
-  const [menuCollapse, setMenuCollapse] = useState<boolean>(false);
+  const [menuCollapse, setMenuCollapse] = useState<boolean>(false)
 
-  const { currentSection } = useCurrentSection();
+  const { currentSection } = useCurrentSection()
 
   const menuIconClick = (): void => {
-    setMenuCollapse(!menuCollapse);
-  };
+    setMenuCollapse(!menuCollapse)
+  }
 
   const handleMenuItemClick = (sectionId: string): void => {
-    const sectionElement = document.getElementById(sectionId);
+    const sectionElement = document.getElementById(sectionId)
     if (sectionElement != null) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      sectionElement.scrollIntoView({ behavior: 'smooth' })
     }
-  };
-
+  }
 
   const handleResize = (): void => {
     if (window.innerWidth > 768) {
-      setMenuCollapse(false);
+      setMenuCollapse(false)
     } else {
-      setMenuCollapse(true);
+      setMenuCollapse(true)
     }
-  };
+  }
 
   useEffect(() => {
-    handleResize();
+    handleResize()
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
-    <aside className="panel">
-      <div id="header">
+    <aside className='panel'>
+      <div id='header'>
         <Sidebar collapsed={menuCollapse}>
           <div className='header-and-button'>
             <div className='header'>
-              <div className="logotext">
-                {!menuCollapse ? 
-                  <PhotoBoxHome />
-                  : <img src={img} alt='user avatar' className='collapsed'/>}
+              <div className='logotext'>
+                {!menuCollapse
+                  ? <PhotoBoxHome />
+                  : <img src={img} alt='user avatar' className='collapsed' />}
               </div>
-              <div className="closemenu" onClick={menuIconClick}>
+              <div className='closemenu' onClick={menuIconClick}>
                 <FontAwesomeIcon icon={faBars} />
               </div>
             </div>
             <Menu>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faUser} />}
-                onClick={() => {handleMenuItemClick('about-me'); }}
+                onClick={() => { handleMenuItemClick('about-me') }}
                 className={currentSection === 'about-me' ? 'active' : undefined}
               >
-              About Me
+                About Me
               </MenuItem>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faGraduationCap} />}
-                onClick={() => { handleMenuItemClick('education'); }}
+                onClick={() => { handleMenuItemClick('education') }}
                 className={currentSection === 'education' ? 'active' : undefined}
               >
-              Education
+                Education
               </MenuItem>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faPencil} />}
-                onClick={() => { handleMenuItemClick('experience'); }}
+                onClick={() => { handleMenuItemClick('experience') }}
                 className={currentSection === 'experience' ? 'active' : undefined}
               >
-              Experience
+                Experience
+              </MenuItem>
+              <MenuItem
+                icon={<FontAwesomeIcon icon={faGem} />}
+                onClick={() => { handleMenuItemClick('skills') }}
+                className={currentSection === 'skills' ? 'active' : undefined}
+              >
+                Skills
               </MenuItem>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faSuitcase} />}
-                onClick={() => { handleMenuItemClick('portfolio'); }}
+                onClick={() => { handleMenuItemClick('portfolio') }}
                 className={currentSection === 'portfolio' ? 'active' : undefined}
               >
-              Portfolio
+                Portfolio
               </MenuItem>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faPaperPlane} />}
-                onClick={() => { handleMenuItemClick('address'); }}
+                onClick={() => { handleMenuItemClick('address') }}
                 className={currentSection === 'address' ? 'active' : undefined}
               >
-              Contacts
+                Contacts
               </MenuItem>
               <MenuItem
                 icon={<FontAwesomeIcon icon={faComment} />}
-                onClick={() => { handleMenuItemClick('feedbacks'); }}
+                onClick={() => { handleMenuItemClick('feedbacks') }}
                 className={currentSection === 'feedbacks' ? 'active' : undefined}
               >
-              Feedback
+                Feedback
               </MenuItem>
             </Menu>
           </div>
           <Link to='/'>
-            {!menuCollapse ? (
-              <Button icon={<FontAwesomeIcon icon={faChevronLeft} />} text="Go Back" />
-            ) : (
-              <Button className='btn-collapsed' icon={<FontAwesomeIcon icon={faChevronLeft} />} />
-            )}
+            {!menuCollapse
+              ? (
+                <Button icon={<FontAwesomeIcon icon={faChevronLeft} />} text='Go Back' />
+                )
+              : (
+                <Button className='btn-collapsed' icon={<FontAwesomeIcon icon={faChevronLeft} />} />
+              )}
           </Link>
         </Sidebar>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default Panel;
+export default Panel
