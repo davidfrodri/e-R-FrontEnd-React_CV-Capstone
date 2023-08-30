@@ -1,4 +1,4 @@
-import { type FormSkills, type EducationData } from "../types"
+import { type FormSkills, type EducationData } from '../types'
 
 export const fetchSkillsService = async (): Promise<FormSkills[]> => {
   const response = await fetch('/api/skills')
@@ -7,10 +7,10 @@ export const fetchSkillsService = async (): Promise<FormSkills[]> => {
 }
 
 export const fetchEducation = async (): Promise<EducationData[]> => {
-  const response = await fetch('/api/educations');
+  const response = await fetch('/api/educations')
   if (!response.ok) {
-	  throw new Error('Network response was not ok');
+    throw new Error('Network response was not ok')
   }
-  const data = await response.json();
-  return data;
-};
+  const data = await response.json()
+  return data
+}

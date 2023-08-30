@@ -7,12 +7,11 @@ interface Props {
   onClick?: () => void
 }
 
-const Button = ({ text, icon, className, onClick }: Props): JSX.Element => {
+const Button = ({ text, icon, className, onClick, ...otherProps }: Props): JSX.Element => {
   return (
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    <button className={`btn ${className}`} onClick={onClick}>
+    <button className={`btn${(className !== undefined) ? ` ${className}` : ''}`} onClick={onClick} {...otherProps}>
       {icon !== undefined && <span className='btn-icon'>{icon}</span>}
-      <span className='btn-text'>{text}</span>
+      {text !== undefined && <span className='btn-text'>{text}</span>}
     </button>
   )
 }

@@ -12,7 +12,7 @@ const PhotoBoxHome = ({ note, description }: Props): JSX.Element => {
       <img src={img} alt='user avatar' className='photo-box__avatar' />
       <h2 className='photo-box__name'>David Rodriguez</h2>
       <p className='photo-box__note'>{note}</p>
-      <p className='photo-box__description'>{description}</p>   
+      <p className='photo-box__description'>{description}</p>
     </div>
   )
 }

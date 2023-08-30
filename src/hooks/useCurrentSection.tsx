@@ -1,31 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const useCurrentSection = (): { currentSection: string } => {
-  const [currentSection, setCurrentSection] = useState("about-me");
-  
-  
+  const [currentSection, setCurrentSection] = useState('about-me')
+
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLDivElement>("section[id]");
-    const mainSection = document.querySelector<HTMLDivElement>("#main")
-    
+    const sections = document.querySelectorAll<HTMLDivElement>('section[id]')
+    const mainSection = document.querySelector<HTMLDivElement>('#main')
+
     if (mainSection !== null) {
       const navHighlighter = (): void => {
-        const currentPosition = mainSection.scrollTop + 1;
+        const currentPosition = mainSection.scrollTop + 1
         sections.forEach((section) => {
-          const sectionStart = section.offsetTop;
-          const sectionEnd = sectionStart + section.offsetHeight;
-          
+          const sectionStart = section.offsetTop
+          const sectionEnd = sectionStart + section.offsetHeight
+
           if (currentPosition > sectionStart && currentPosition < sectionEnd) {
-            setCurrentSection(section.id);
+            setCurrentSection(section.id)
           }
-        });
-      };
-      mainSection.addEventListener("scroll", navHighlighter);
+        })
+      }
+      mainSection.addEventListener('scroll', navHighlighter)
     }
-  }, []);
-  return { currentSection };
-};
+  }, [])
+  return { currentSection }
+}
 
- 
-
-export default useCurrentSection;
+export default useCurrentSection

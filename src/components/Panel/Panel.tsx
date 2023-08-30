@@ -45,9 +45,9 @@ const Panel: React.FC = (): JSX.Element => {
   }, [])
 
   return (
-    <aside className='panel'>
+    <aside className='panel' id='panel' data-testid='panel'>
       <div id='header'>
-        <Sidebar collapsed={menuCollapse}>
+        <Sidebar collapsed={menuCollapse} data-testid='sidebar'>
           <div className='header-and-button'>
             <div className='header'>
               <div className='logotext'>
@@ -55,7 +55,7 @@ const Panel: React.FC = (): JSX.Element => {
                   ? <PhotoBoxHome />
                   : <img src={img} alt='user avatar' className='collapsed' />}
               </div>
-              <div className='closemenu' onClick={menuIconClick}>
+              <div className='closemenu' onClick={menuIconClick} data-testid='menu-icon'>
                 <FontAwesomeIcon icon={faBars} />
               </div>
             </div>
@@ -118,7 +118,7 @@ const Panel: React.FC = (): JSX.Element => {
                 )
               : (
                 <Button className='btn-collapsed' icon={<FontAwesomeIcon icon={faChevronLeft} />} />
-              )}
+                )}
           </Link>
         </Sidebar>
       </div>

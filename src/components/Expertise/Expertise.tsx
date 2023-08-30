@@ -1,12 +1,11 @@
 import { type JobDataArray } from '../../types'
 
 interface Props {
-  data: JobDataArray
+  data: JobDataArray | null
 }
 
 const Expertise = ({ data }: Props): JSX.Element => {
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  if (!data) {
+  if (data == null) {
     return <div>Loading...</div>
   }
 

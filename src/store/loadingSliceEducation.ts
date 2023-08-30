@@ -1,21 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  isLoadingEducation: false,
-};
+  isLoadingEducation: false
+}
 
 const isLoadingEducation = createSlice({
   name: 'loadingEducation',
   initialState,
   reducers: {
     setLoadingEducation: (state) => {
-      state.isLoadingEducation = true;
+      state.isLoadingEducation = true
     },
     clearLoadingEducation: (state) => {
-      state.isLoadingEducation = false;
-    },
-  },
-});
+      state.isLoadingEducation = false
+    }
+  }
+})
 
-export const { setLoadingEducation, clearLoadingEducation } = isLoadingEducation.actions;
-export default isLoadingEducation.reducer;
+export const { setLoadingEducation, clearLoadingEducation } = isLoadingEducation.actions
+export default isLoadingEducation.reducer

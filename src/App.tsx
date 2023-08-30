@@ -6,15 +6,15 @@ import Inner from './pages/Inner/Inner'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <Home />
   },
   {
     path: '/inner',
-    element: <Inner />,
-  },
+    element: <Inner />
+  }
 ])
 
-function App(): JSX.Element {
+function App (): JSX.Element {
   return <RouterProvider router={router} />
 }
 

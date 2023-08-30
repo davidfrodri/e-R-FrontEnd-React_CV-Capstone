@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 interface ScrollToTop {
-  isVisible: boolean;
-  scrollToTop: () => void;
+  isVisible: boolean
+  scrollToTop: () => void
 }
 
 const useScrollToTop = (scrollThreshold: number = 200): ScrollToTop => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const handleScroll = (): void => {
       if (window.scrollY > scrollThreshold) {
-        setIsVisible(true);
+        setIsVisible(true)
       } else {
-        setIsVisible(false);
+        setIsVisible(false)
       }
-    };
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => { window.removeEventListener('scroll', handleScroll); };
-  }, [scrollThreshold]);
+    window.addEventListener('scroll', handleScroll)
+    return () => { window.removeEventListener('scroll', handleScroll) }
+  }, [scrollThreshold])
 
   const scrollToTop = (): void => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    });
-  };
+      behavior: 'smooth'
+    })
+  }
 
-  return { isVisible, scrollToTop };
-};
+  return { isVisible, scrollToTop }
+}
 
-export default useScrollToTop;
+export default useScrollToTop

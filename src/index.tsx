@@ -9,7 +9,7 @@ import App from './App'
 import './scss/main.scss'
 
 if (process.env.NODE_ENV === 'development') {
-  makeServer(); 
+  makeServer()
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -18,5 +18,5 @@ root.render(
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

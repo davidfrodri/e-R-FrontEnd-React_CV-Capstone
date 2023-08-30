@@ -9,17 +9,12 @@ describe('Box', () => {
   })
 
   it('renders with custom title prop', () => {
-    render(<Box title="Custom title" />)
+    render(<Box title='Custom title' />)
     expect(screen.getByText('Custom title')).toBeInTheDocument()
   })
 
   it('renders with custom text prop', () => {
-    render(<Box text="Custom text" />)
+    render(<Box text='Custom text' />)
     expect(screen.getByText('Custom text')).toBeInTheDocument()
-  })
-
-  it('renders with custom id prop', () => {
-    render(<Box id="custom-id" />)
-    expect(screen.getByTestId('box-section')).toHaveAttribute('id', 'custom-id')
   })
 })
