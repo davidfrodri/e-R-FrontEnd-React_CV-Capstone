@@ -1,0 +1,16 @@
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-family: $font-family-primary;
+
+	&__title {
+		color: $color-primary-green;
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 21px;
+	}
+}

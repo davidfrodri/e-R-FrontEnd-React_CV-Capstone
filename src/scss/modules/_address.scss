@@ -1,0 +1,42 @@
+.address {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-family: $font-family-primary;
+	font-style: normal;
+
+	h2 {
+		color: $color-primary-green;
+	}
+
+	.strong {
+		font-weight: 700;
+	}
+
+	&__item {
+		display: flex;
+
+		.icon-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 70px;
+
+			font-size: 20px;
+			color: $color-primary-green;
+		}
+
+		.content-item {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			a {
+				text-decoration: none;
+				color: black;
+			}
+		}
+	}
+}

@@ -1,0 +1,107 @@
+.skills {
+    display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-family: $font-family-primary;
+
+    .up {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .title {
+            color: $color-primary-green;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 30px;
+
+        padding: 20px;
+        border: 1px solid $color-primary-green;
+        border-radius: 8px;
+
+        .field {
+            display: flex;
+            gap: 20px;
+
+            input {
+                padding: 10px;
+                border: 1px solid rgb(70, 69, 69);
+                border-radius: 5px;
+            }
+        }
+
+        .btn {
+            width: auto;
+            align-self: flex-start;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+    }
+
+	.chart-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            list-style: none;
+            
+            .bar {
+                background: $color-primary-green;
+                padding: 10px 20px;
+                height: 40px;
+                color: white;
+
+                overflow: hidden; 
+                text-overflow: ellipsis;
+            }
+        }
+
+
+        .x-axis {
+            display: flex;
+            width: 100%;
+
+            .first {
+                height: 15px;
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
+                width: calc(100%/3)
+            }
+            .second {
+                height: 15px;
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
+                width: calc(100%/3)
+            }
+            .third {
+                height: 15px;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                width: calc(100%/3)
+            }
+        }
+
+        .x-names {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 14px;
+        }
+    }
+}

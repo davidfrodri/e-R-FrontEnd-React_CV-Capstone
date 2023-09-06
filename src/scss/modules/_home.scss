@@ -1,0 +1,60 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    background-image: url(../../assets/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+    padding: 20px;
+
+    .photo-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    
+        color: white;
+        text-align: center;
+        font-family: $font-family-primary;
+    
+        &__avatar {
+            width: 163px;
+            height: 163px;
+            object-fit: cover;
+    
+            border-radius: 50%;
+            border: 2px solid #e2e2e2;
+        }
+    
+        &__name {
+            font-weight: 700;
+            font-size: 45px;
+        }
+    
+        &__note {
+            font-weight: 600;
+            font-size: 25px;
+        }
+    
+        &__description {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+    
+            max-width: 500px;
+        }
+    
+    }
+
+    button {
+        font-family: $font-family-primary;
+        font-weight: 400;
+        font-size: 16px;
+    } 
+}
