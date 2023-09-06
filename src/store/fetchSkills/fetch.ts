@@ -15,7 +15,8 @@ const skillsSlice = createSlice({
     defaultSkills: [] as FormSkills[],
     skillsData: [] as FormSkills[]
   },
-  reducers: {},
+  reducers: {
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSkills.fulfilled, (state, action) => {

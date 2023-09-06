@@ -1,4 +1,5 @@
 {
+	"homepage": "http://davidfrodri.github.io/e-R-FrontEnd-React_CV-Capstone",
 	"name": "cv-app",
 	"version": "0.1.0",
 	"private": true,
@@ -33,6 +34,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"predeploy": "npm run build",
+		"deploy": "S2-Creating-final-project-solution -d build",
 		"build": "react-scripts build",
 		"eject": "react-scripts eject",
 		"lint": "ts-standard --fix --ext .ts,.tsx .",
